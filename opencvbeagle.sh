@@ -5,7 +5,7 @@ else
 flag=0
 fi
 echo "Installing OpenCV 2.4.12"
-mkdir OpenCV
+sudo mkdir OpenCV
 cd OpenCV
 echo "Removing any pre-installed ffmpeg and x264"
 sudo apt-get -y remove ffmpeg x264 libx264-dev
@@ -21,13 +21,13 @@ sudo apt-get -y install libfaac-dev libmp3lame-dev libopencore-amrnb-dev libopen
 sudo apt-get -y install x264 v4l-utils ffmpeg 
 sudo apt-get -y install unzip
 echo "Downloading OpenCV 2.4.12"
-wget https://github.com/Itseez/opencv/archive/2.4.12.zip
+sudo wget https://github.com/Itseez/opencv/archive/2.4.12.zip
 echo "Installing OpenCV 2.4.12"
-unzip 2.4.12.zip
+sudo unzip 2.4.12.zip
 cd opencv-2.4.12
 mkdir build
 cd build
-cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=ON -D WITH_QT=OFF -D WITH_OPENGL=ON -D WITH_VTK=ON ..
-make
+sudo cmake -D CMAKE_BUILD_TYPE=RELEASE -D CMAKE_INSTALL_PREFIX=/usr/local -D WITH_TBB=ON -D BUILD_NEW_PYTHON_SUPPORT=ON -D WITH_V4L=ON -D INSTALL_C_EXAMPLES=ON -D INSTALL_PYTHON_EXAMPLES=ON -D BUILD_EXAMPLES=ON -D WITH_QT=OFF -D WITH_OPENGL=ON -D WITH_VTK=ON ..
+sudo make
 sudo make install
 echo "OpenCV 2.4.12 ready to be used"
